@@ -1,5 +1,5 @@
 <!-- footer-->
-    <h1>copyright!</h1>
-    </body>
+    <br>Copyright © 2017
+</body>
 </html>
 <!--end of footer-->

@@ -12,5 +12,8 @@
         <title>Car Portal :: <%=request.getParameter("title")%></title>
     </head>
     <body>
-        <h1>Header!</h1>
+        <div id="panel">
+        <a href="login.jsp">Login</a>&nbsp;
+        <a href="register.jsp">Register</a>
+        </div>
 <!-- end of header-->
