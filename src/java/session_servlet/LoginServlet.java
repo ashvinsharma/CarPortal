@@ -8,10 +8,8 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet{
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, java.io.IOException {
-
+        throws ServletException{
         try {
-
             UserBean user = new UserBean();
             user.setUserName(request.getParameter("uid"));
             user.setPassword(request.getParameter("pass"));
@@ -22,10 +20,30 @@ public class LoginServlet extends HttpServlet{
                 request.getSession(true).setAttribute("user", user);
                 response.sendRedirect("index.jsp"); //logged-in page      		
             } else {
-                response.sendRedirect("invalidLogin.jsp"); //error page 
+                response.sendRedirect("invalidlogin.jsp"); //error page 
             }
-        } catch (Throwable theException) {
-            System.out.println(theException);
+        } catch (Throwable e) {
+            System.out.println(e);
+        }
+    }
+    public void doSet(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+        try{
+            UserBean user = new UserBean();
+            user.setUserName(request.getParameter("uid"));
+            user.setPassword(request.getParameter("pass"));
+            user.setFirstName(request.getParameter("firstname"));
+            user.setSurName(request.getParameter("surname"));
+            //not included cars for owners
+            user = UserDAO.register(user);
+            
+            if(user.isValid()){
+                request.getSession(true).setAttribute("user", user);
+                response.sendRedirect("index.jsp"); //logged-in page      		
+            } else {
+                response.sendRedirect("invalidregistration.jsp"); //error page 
+            }
+        } catch(Throwable e){
+            System.out.println("e");
         }
     }
 }

@@ -7,8 +7,7 @@ public class UserDAO {
     public static UserBean login(UserBean bean) throws ClassNotFoundException {
         String uid = bean.getUsername();    
         String pass = bean.getPassword();
-        String searchQuery
-                = "SELECT * FROM `java-test`.users WHERE uid='" + uid 
+        String searchQuery = "SELECT * FROM `java-test`.users WHERE uid='" + uid 
                 + "' AND pass='" + pass + "'";
         // "System.out.println" prints in the console;
         System.out.println("uid entered: " + uid);
@@ -23,10 +22,10 @@ public class UserDAO {
 
            if (rs.next()) {
                 String firstName = rs.getString("firstname");
-                String lastName = rs.getString("secondname");
+                String surName = rs.getString("surname");
                 System.out.println(firstName + " logged in.");
                 bean.setFirstName(firstName);
-                bean.setLastName(lastName);
+                bean.setSurName(surName);
                 bean.setValid(true); //if user exists set the isValid variable to true 
             }
             // if user does not exist set the isValid variable to false
@@ -62,8 +61,18 @@ public class UserDAO {
         }
         return bean;
     }
-//    public static UserBean register(UserBean bean) throws ClassNotFoundException{
-//    String uid = bean.getUsername();
-//    String pass = bean.getPassword();
-//    }
+    public static UserBean register(UserBean bean) throws ClassNotFoundException{
+        String uid = bean.getUsername(),
+        pass = bean.getPassword(),
+        fname = bean.getFirstName(),
+        sname = bean.getSurName(),
+        gid = bean.getGroup(),
+        type= bean.get
+        car = bean.getCar();
+        
+        String insertQuery = "INSERT INTO `java-test`.users "
+                + "VALUES "
+                + "('"+uid+"', '"+pass+"', '"+fname+"', '"+sname+"', "+gid+", '"+type+"', '"+car"');";
+        return bean;
+    }
 }
