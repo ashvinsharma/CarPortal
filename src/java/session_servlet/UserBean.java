@@ -1,7 +1,8 @@
 package session_servlet;
 
-public class UserBean implements java.io.Serializable{
+import java.io.Serializable;
 
+public class UserBean implements Serializable{
     private String uid;
     private String pass;
     private String firstName;

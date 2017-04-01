@@ -1,6 +1,7 @@
-<jsp:useBean id="users" class="session_servlet.UserBean"/>
+<%@ page import="session_servlet.UserBean"%>
 <jsp:include page="header.jsp">
     <jsp:param name="title" value="Login Successful"/>
-</jsp:include>       
-<p><jsp:getProperty name="users" property="uid"/></p>
+</jsp:include>
+<%UserBean currentUser= (UserBean)session.getAttribute("currentSessionUser");%>
+Hello <%=currentUser.getUsername()%>
 <jsp:include page="footer.jsp"/>
