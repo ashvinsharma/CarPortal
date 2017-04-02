@@ -3,13 +3,11 @@
 </jsp:include>
 <%
     if(request.getSession(false).getAttribute("user") == null){
-        out.print("<form name=\"login\" action=\"LoginServlet\" autocomplete=\"on\"> "
+        out.print("<form name=\"login\" action=\"LoginServlet\" method=\"POST\" autocomplete=\"on\"> "
                 + "Username: <input type=\"text\" name=\"uid\" placeholder=\"Username\" autofocus required><br> "
                 + "Password: <input type=\"password\" name=\"pass\" placeholder=\"Password\" required><br> "
                 + "<input type=\"submit\" value=\"Login\"><br></form>");
-    }else{
-        response.sendRedirect("index.jsp");
-    }
+    }else{response.sendRedirect("index.jsp");}
 %>
 <%
    String uid= request.getParameter("uid");

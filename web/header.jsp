@@ -15,11 +15,11 @@
         <div>
             <a href="index.jsp">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <%if(request.getSession(true).getAttribute("user") == null){  //no user is logged in
-                out.print("<a href=\"login.jsp\">Login</a>&nbsp;");
-                out.print("<a href=\"register.jsp\">Register</a>");
+                out.print("<a href=\"login.jsp\">Log In</a>&nbsp;");
+                out.print("<a href=\"signup.jsp\">Sign Up</a>");
             }else if(request.getSession(true).getAttribute("user") != null){ //user is logged in 
                 UserBean currentUser= (UserBean)request.getSession(true).getAttribute("user");
-                out.print("Hi, " + currentUser.getFirstName() + " <a href=\"logout.jsp\">Logout</a>");
+                out.print(currentUser.getFirstName() + " <a href=\"logout.jsp\">Logout</a>");
             }
             %>
         </div>
