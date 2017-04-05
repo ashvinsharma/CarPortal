@@ -78,7 +78,7 @@ public class UserDAO {
                 + "', '"+ sname + "', " + gid + ", '" + type + "', '" + car + "');";
             stmt.executeUpdate(insertQuery);
             bean.setValid(true);
-        }catch(MySQLDataException e){
+        }catch(Exception e){
             bean.setValid(false);
             System.out.println(e);
         }finally {

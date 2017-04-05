@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet{
             } else {
                 response.sendRedirect("invalidlogin.jsp"); //error page 
             }
-        } catch (Throwable e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
