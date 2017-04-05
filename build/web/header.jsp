@@ -1,8 +1,4 @@
-<%-- 
-    Document   : header
-    Created on : 30 Mar, 2017, 12:26:17 AM
-    Author     : Ashvin
---%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="session_servlet.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
