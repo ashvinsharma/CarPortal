@@ -7,8 +7,4 @@
     Username Password don't match. Please try again!<br>
     <input type="submit" value="login"><br>
 </form>
-<%
-   String uid= request.getParameter("uid");
-   String pass= request.getParameter("pass");
-%>
 <jsp:include page="footer.jsp"/>
