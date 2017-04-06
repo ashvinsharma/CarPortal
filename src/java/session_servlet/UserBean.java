@@ -2,7 +2,8 @@ package session_servlet;
 
 import java.io.Serializable;
 
-public class UserBean implements Serializable{
+public class UserBean implements Serializable {
+
     private String uid;
     private String pass;
     private String firstName;
@@ -10,11 +11,18 @@ public class UserBean implements Serializable{
     private String group;
     private String type;
     private String car;
+    private String email;
     public boolean valid;
 
     public UserBean() {
     }
 
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String newEmail) {
+        email = newEmail;
+    }
     public String getUsername() {
         return uid;
     }
@@ -39,14 +47,14 @@ public class UserBean implements Serializable{
     public void setSurName(String newLastName) {
         surName = newLastName;
     }
-    public String getGroup(){
+    public String getGroup() {
         return group;
     }
-    public void setGroup(String newGroup){
+    public void setGroup(String newGroup) {
         group = newGroup;
     }
     public String getType() {
-        if(type == null){
+        if (type == null) {
             setType("lite");
         }
         return type;
@@ -60,7 +68,6 @@ public class UserBean implements Serializable{
     public void setCar(String newCar) {
         car = newCar;
     }
-
     public boolean isValid() {
         return valid;
     }

@@ -6,13 +6,11 @@ public class UserDAO {
     static Statement stmt = null;
     static ResultSet rs = null;
     public static UserBean login(UserBean bean) throws ClassNotFoundException {
-        String uid = bean.getUsername();    
-        String pass = bean.getPassword();
-        String searchQuery = "SELECT * FROM `java-test`.users WHERE uid='" + uid 
-                + "' AND pass='" + pass + "'";
+        String searchQuery = "SELECT * FROM `java-test`.users WHERE uid='" + bean.getUsername() 
+                + "' AND pass='" + bean.getPassword() + "'";
         // "System.out.println" prints in the console;
-        System.out.println("uid entered: " + uid);
-        System.out.println("pass entered: " + pass);
+        System.out.println("uid entered: " + bean.getUsername());
+        System.out.println("pass entered: " + bean.getPassword());
         System.out.println("Query: " + searchQuery);
         try {
             //connect to DB 
@@ -60,25 +58,18 @@ public class UserDAO {
         return bean;
     }
     public static UserBean register(UserBean bean) throws ClassNotFoundException, SQLException{
-        String uid = bean.getUsername(),
-        pass = bean.getPassword(),
-        fname = bean.getFirstName(),
-        sname = bean.getSurName(),
-        gid = bean.getGroup(),
-        type= bean.getType(),
-        car = bean.getCar();
-        
+       
         try{
             Class.forName("com.mysql.jdbc.Driver");
             currentCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/java-test","root","localhost");
             stmt = currentCon.createStatement();
             String insertQuery = "INSERT INTO `java-test`.users "
                 + "VALUES "
-                + "('" + uid + "', '" + pass + "', '" + fname 
-                + "', '"+ sname + "', " + gid + ", '" + type + "', '" + car + "');";
+                + "('" + bean.getUsername() + "', '" + bean.getPassword() + "', '" + bean.getFirstName() 
+                + "', '"+ bean.getSurName() + "', " + bean.getGroup() + ", '" + bean.getType() + "', '" + bean.getCar() + ", '" + bean.getEmail() +"');";
             stmt.executeUpdate(insertQuery);
             bean.setValid(true);
-        }catch(MySQLDataException e){
+        }catch(Exception e){
             bean.setValid(false);
             System.out.println(e);
         }finally {
