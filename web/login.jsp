@@ -3,14 +3,14 @@
    
 <html>
             <head>
-                
+                 
                <link rel="stylesheet" type="text/css" href="login.css"/>
                <meta charset="UTF-8">
-                >
+                
                
-  <            
+             
             </head>
-            <body>
+            
                 <div class="body"></div>
                 <div class="grad"></div>
                 <div class="cp">
@@ -51,5 +51,5 @@
                 </div>
                    
 
-            </body>
+           
          </html>
