@@ -24,11 +24,17 @@
         
         
 	background-image: url(https://static.pexels.com/photos/2025/city-cars-road-traffic.jpg);
-	background-size: cover;
+	background-size:contain;
 	-webkit-filter: blur(2px);
 	z-index: 0;
 }
-
+.footer{
+   
+   position:absolute;
+   height:30px;
+   width:1600px;
+    z-index:auto;
+}
 
 .grad{
 	position: absolute;

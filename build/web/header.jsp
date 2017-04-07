@@ -10,41 +10,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="login.css"/>
+        <link rel="stylesheet" type="text/css" href="header.css"/>
+        <link rel="stylesheet" type="text/css" href="index.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+
         
         
-        
-        
-        <style>
-            
-           .navbar {
-               margin-bottom: 0;
-                background-color: #2d2d30;
-                border: 0;
-                font-size: 11px !important;
-                letter-spacing: 2px;
-                opacity:0.9;
-             } 
-            .navbar li a, .navbar .navbar-brand { 
-                color: #d5d5d5 !important;
-             }
-             .navbar-nav li a:hover {
-                color: #fff !important;
-             }
-             .navbar-nav li.active a {
-                color: #fff !important;
-                background-color:#29292c !important;
-             }
-             .navbar-right{
-                 padding-left: 1350px;
-             }
-            
-            
-            
-            
-            
-            
-        </style>
-\
+      
+
     </head>
     <body>
         
@@ -63,6 +41,11 @@
                                     <c:otherwise>
                                         <% UserBean currentUser= (UserBean)request.getSession(true).getAttribute("user");%>
                                          Hi, <%=currentUser.getFirstName()%>
+                                         
+                                         <script>
+
+                                             alert(" Hi, <%=currentUser.getFirstName()%>");
+                                         </script>
                                          <li><a href="logout.jsp">Logout</a></li>
                                     </c:otherwise>
                                     </c:choose>
@@ -75,6 +58,5 @@
             
         </div>
         
-   
-</html>
+
 <!-- end of header-->

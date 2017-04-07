@@ -1,82 +1,8 @@
-<html>
-            <head>
-                
-               <link rel="stylesheet" type="text/css" href="login.css"/>
-               <meta charset="UTF-8">
-               
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-           
-                <style>
-                    
-                    .container{
-                        
-                        padding:80px 120px;
-                    }
-                    
-                    .car{
-                        border: 10px solid transparent;
-                        margin-bottom: 25px;
-                        
-                        opacity: 0.9;
-                        
-                    }
-                    .car:hover{
-                        border-color: #f1f1f0;
-                        -webkit-transition-duration: 0.4s; 
-                         transition-duration: 0.4s;
-                    }
-                    
-                    .carousel-inner img {
-                         
-                        width: 100%; /* Set width to 100% */
-                        margin: auto;
-                    }
-                    
-                    .carousel-caption h3 {
-                        color: #fff !important;
-                    }
-                    @media (max-width: 600px) {
-                       .carousel-caption {
-                            display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-                        }
-                    }
-                    
-                    
-                    
-                    
-                    
-                </style>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            </head>
-            
-            
-            
-           
-           
-            
                <jsp:include page="header.jsp">
                <jsp:param name="title" value="Homepage"/>
                </jsp:include>
                    <%--<c:out value="${pageContext.request.}>--%>
-               <jsp:include page="footer.jsp"/> 
+              
                
    
                <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -171,12 +97,17 @@
                        </div>
                    </div>
                </div>
+         
                
                
+               <div>
+                   
+                    <jsp:include page="footer.jsp"/> 
+               </div>
                
-            </body>
+               
+            
 
-</html>
 
 
 

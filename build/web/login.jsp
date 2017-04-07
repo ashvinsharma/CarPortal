@@ -1,20 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-   
-<html>
-            <head>
-                 
-               <link rel="stylesheet" type="text/css" href="login.css"/>
-               <meta charset="UTF-8">
-                
-               
-             
-            </head>
-            
                 <div class="body"></div>
                 <div class="grad"></div>
                 <div class="cp">
                     <div>Car<span>Portal</span></div>
+                    
                 </div>
                 <br>
          
@@ -41,15 +31,20 @@
                                 <c:redirect url="index.jsp"/>
                         </c:otherwise>
                             </c:choose>
-                            <jsp:include page="footer.jsp"/>
+                               
+                                 
+                </div>             
+                    
+                   <div class="footer">
+                                <jsp:include page="footer.jsp"/>
+                      </div>  
+                
+                      
                     
                     
                     
-                    
-                    
-                    
-                </div>
+                
                    
-
+                               
            
-         </html>
+     
