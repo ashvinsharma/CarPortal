@@ -23,6 +23,7 @@
 
 
              .navbar-right{
-                 padding-left: 1350px;
+                
+              left: calc(95% - 10px)
              }
             
