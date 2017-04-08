@@ -13,7 +13,6 @@ public class UpdatePasswordServlet extends HttpServlet{
                    oldPassword = request.getParameter("oldpass");
             System.out.println(user.getFirstName() + "  is changing its current password(" + user.getPassword()
             + ") to "+ newPassword + ". Current Password entered is: " + oldPassword);
-            response.sendRedirect("changepwd.jsp");
             
             if(user.getPassword().equals(oldPassword)){
                 if(ProfileDAO.updatePass(user, newPassword)){
