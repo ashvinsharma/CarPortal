@@ -5,22 +5,18 @@
             <url>web/index.jsp</url>
             <bookmark id="2">
                 <name/>
-                <line>4</line>
+                <line>182</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/CarPortal/web/index.jsp</file>
-            <file>file:/D:/Documents/CarPortal/src/java/session_servlet/UserBean.java</file>
-            <file>file:/D:/Documents/CarPortal/web/login.jsp</file>
-            <file>file:/D:/Documents/CarPortal/web/blah</file>
-            <file>file:/D:/Documents/CarPortal/src/java/session_servlet/UserDAO.java</file>
-            <file>file:/D:/Documents/CarPortal/src/java/session_servlet/SignUpServlet.java</file>
-            <file>file:/D:/Documents/CarPortal/web/signup.jsp</file>
-            <file>file:/D:/Documents/CarPortal/web/logout.jsp</file>
-            <file>file:/D:/Documents/CarPortal/web/header.jsp</file>
+            <file>file:/D:/Documents/CarPortal/web/changepwd.jsp</file>
+            <file>file:/D:/Documents/CarPortal/src/java/profile_servlet/ProfileDAO.java</file>
+            <file>file:/D:/Documents/CarPortal/web/successpwd.jsp</file>
+            <file>file:/D:/Documents/CarPortal/web/welcome.jsp</file>
+            <file>file:/D:/Documents/CarPortal/src/java/profile_servlet/UpdatePasswordServlet.java</file>
             <file>file:/D:/Documents/CarPortal/src/java/session_servlet/LoginServlet.java</file>
         </group>
     </open-files>

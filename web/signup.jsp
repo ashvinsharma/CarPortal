@@ -13,7 +13,7 @@
         You are:         <select name=group required> <option>Select Type...</option>
             <option value=3>Member</option>
             <option value=2>Owner</option></select><br>
-        Car:        <input type=text     name=car        placeholder=Car>
+        Car:        <input type=text     name=car        placeholder=Car> <!--only to be filled by owner type user-->
         <br><input type=submit value=Signup> </form>
     </c:when>
     <c:otherwise>

@@ -8,7 +8,7 @@ public class UserBean implements Serializable {
     private String pass;
     private String firstName;
     private String surName;
-    private String group;
+    private int group;
     private String type;
     private String car;
     private String email;
@@ -47,10 +47,10 @@ public class UserBean implements Serializable {
     public void setSurName(String newLastName) {
         surName = newLastName;
     }
-    public String getGroup() {
+    public int getGroup() {
         return group;
     }
-    public void setGroup(String newGroup) {
+    public void setGroup(int newGroup) {
         group = newGroup;
     }
     public String getType() {
