@@ -9,21 +9,34 @@ import java.util.logging.Logger;
 public class RideDAO{
     static Connection currentConnection = null;
     static Statement currentStatement = null;
-                
-    public static boolean searchRide(String fromString, String toString){
+    static ResultSet currentRs = null;
+    public static boolean searchRide(CarBean carBean, String fromString, String toString){
         try {
-            SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
-            System.out.println(formater.parse(fromString));
-            Date fromDate = formater.parse(fromString),
-                    toDate = formater.parse(toString);
-        }catch(Exception e){System.out.println("Something wrong in converting date please check again!");}
-        try{
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            Date fromDate = formatter.parse(fromString),
+                    toDate = formatter.parse(toString);
+            System.out.println(fromString);
             Class.forName("com.mysql.jdbc.Driver");
-            String updateQuery = "";
+            String selectQuery = "SELECT * FROM `java-test`.cars_avail " 
+                                + "WHERE `from` <= '"+ fromString + "' "
+                                + "AND `to` >= '" + toString + "';";
+            
+            System.out.println(selectQuery);
             
             currentConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java-test", "root", "localhost");
             currentStatement = currentConnection.createStatement();
-            currentStatement.executeUpdate(updateQuery);
+            currentRs = currentStatement.executeQuery(selectQuery);
+            if(currentRs.next()){
+                carBean.setOwner(currentRs.getString("owner"));
+                carBean.setCarName(currentRs.getString("car_name"));
+                carBean.setFromString(currentRs.getString("from"));
+                carBean.setToString(currentRs.getString("to"));
+                System.out.println(carBean.getOwner() + " " + carBean.getCarName() + " " + carBean.getFromString() +
+                        " " + carBean.getToString());
+                return true;
+            }
+            else{System.out.println("end!");}
         }catch(Exception e){System.out.println(e);}
+        return false;
     }
 }
