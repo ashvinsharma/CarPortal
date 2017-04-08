@@ -19,10 +19,10 @@
             Hi ${sessionScope.user.getFirstName()}
         </c:if>
         <c:if test="${sessionScope.user.getGroup() == 3}"> <%--only visible to memeber group of users--%>
-            Hi ${sessionScope.user.getFirstName()}, Let's book your {number} ride.
+            Hi ${sessionScope.user.getFirstName()}, Let's book your ride {number}.
             <h1>Select Date:</h1>
-            <form>
-                From: <input type="date"/> To: <input type="date"/><br>
+            <form action="RideSearch">
+                From: <input name="from" type="date"/> To: <input name="to" type="date"/><br>
                 <input type="submit" value="Choose Cars" align="right">
             </form>
         </c:if>

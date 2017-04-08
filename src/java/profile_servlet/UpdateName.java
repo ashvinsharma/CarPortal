@@ -12,8 +12,10 @@ public class UpdateName extends HttpServlet{
             String newFirstName = request.getParameter("newfirstname"),
                    newSurname = request.getParameter("newsurname"),
                     pass = request.getParameter("pass");
+           
             System.out.println(user.getFirstName() + " " + user.getSurName() + "  is changing its current name"
                     + " to "+ newFirstName + " " + newSurname + ". Current Password entered is: " + pass);
+            
             if(user.getPassword().equals(pass)){
                 if(ProfileDAO.updateName(user, newFirstName, newSurname)){
                     user.setFirstName(newFirstName);
