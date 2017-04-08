@@ -1,5 +1,4 @@
 package session_servlet;
-import com.mysql.jdbc.exceptions.MySQLDataException;
 import java.sql.*;
 public class UserDAO {
     static Connection currentCon = null;
@@ -20,11 +19,15 @@ public class UserDAO {
             rs = stmt.executeQuery(searchQuery);
 
            if (rs.next()) {
-                String firstName = rs.getString("firstname");
-                String surName = rs.getString("surname");
-                System.out.println(firstName + " logged in.");
-                bean.setFirstName(firstName);
-                bean.setSurName(surName);
+            //Transfering all the details of the user from mysql db to userBean
+                bean.setFirstName(rs.getString("firstname"));
+                bean.setSurName(rs.getString("surname"));
+                bean.setGroup(rs.getInt("gid"));
+                bean.setCar(rs.getString("car"));
+                bean.setType(rs.getString("type"));
+                bean.setEmail(rs.getString("email"));
+            //Transfering all the details of the user from mysql db to userBean
+                System.out.println(rs.getString("firstname") + " logged in.");
                 bean.setValid(true); //if user exists set the isValid variable to true 
             }
             // if user does not exist set the isValid variable to false
@@ -65,8 +68,10 @@ public class UserDAO {
             stmt = currentCon.createStatement();
             String insertQuery = "INSERT INTO `java-test`.users "
                 + "VALUES "
-                + "('" + bean.getUsername() + "', '" + bean.getPassword() + "', '" + bean.getFirstName() 
-                + "', '"+ bean.getSurName() + "', " + bean.getGroup() + ", '" + bean.getType() + "', '" + bean.getCar() + ", '" + bean.getEmail() +"');";
+                + "('" + bean.getUsername() + "', '" + bean.getPassword() + "', '" + bean.getFirstName() + "', '"
+                + bean.getSurName() + "', '" + bean.getGroup() + "', '" + bean.getType() + "', '" + bean.getCar() + "', '" 
+                + bean.getEmail() +"');";
+            System.out.println("Query Entered: " + insertQuery);
             stmt.executeUpdate(insertQuery);
             bean.setValid(true);
         }catch(Exception e){

@@ -42,10 +42,7 @@
                                         <% UserBean currentUser= (UserBean)request.getSession(true).getAttribute("user");%>
                                          Hi, <%=currentUser.getFirstName()%>
                                          
-                                         <script>
-
-                                             alert(" Hi, <%=currentUser.getFirstName()%>");
-                                         </script>
+                                       
                                          <li><a href="logout.jsp">Logout</a></li>
                                     </c:otherwise>
                                     </c:choose>
