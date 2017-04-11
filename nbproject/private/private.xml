@@ -14,12 +14,8 @@
         <group>
             <file>file:/D:/Documents/CarPortal/src/java/ride_booking/RideSearch.java</file>
             <file>file:/D:/Documents/CarPortal/web/cartable.jsp</file>
-            <file>file:/D:/Documents/CarPortal/src/java/profile_servlet/UpdateName.java</file>
-            <file>file:/D:/Documents/CarPortal/src/java/session_servlet/SignUpServlet.java</file>
-            <file>file:/D:/Documents/CarPortal/web/welcome.jsp</file>
             <file>file:/D:/Documents/CarPortal/src/java/ride_booking/CarBean.java</file>
             <file>file:/D:/Documents/CarPortal/src/java/ride_booking/RideDAO.java</file>
-            <file>file:/D:/Documents/CarPortal/web/header.jsp</file>
         </group>
     </open-files>
 </project-private>

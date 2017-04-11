@@ -1,11 +1,10 @@
 package ride_booking;
 
 import java.sql.*;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import session_servlet.UserBean;
+
 public class RideDAO{
     static Connection currentConnection = null;
     static Statement currentStatement = null;
@@ -37,6 +36,68 @@ public class RideDAO{
             }
             else{System.out.println("end!");}
         }catch(Exception e){System.out.println(e);}
+        finally {
+            if (currentRs != null) {
+                try {
+                    currentRs.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentRs = null;
+            }
+            if (currentStatement != null) {
+                try {
+                    currentStatement.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentStatement = null;
+            }
+            if (currentConnection != null) {
+                try {
+                    currentConnection.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentConnection = null;
+            }
+        }
         return false;
+    }
+    
+    public static void lockdates(String username, String carName, String fromString, String toString){
+        try{
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            Date fromDate = formatter.parse(fromString),
+                    toDate = formatter.parse(toString);
+            System.out.println(fromString);
+            Class.forName("com.mysql.jdbc.Driver");
+            String insertQuery = "INSERT INTO `java-test`.`cars_avail` " 
+                    + "VALUES ('" + username + "', '" + carName + "', '" + fromString + "', '" + toString + "');";
+            System.out.println("Query Entered: " + insertQuery);
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            currentConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java-test", "root", "localhost");
+            currentStatement = currentConnection.createStatement();
+            
+            currentStatement.executeUpdate(insertQuery);
+            System.out.println("Dates entered by owner successfully!");
+            
+        }catch(Exception e){
+        System.out.println("Error in lockdates.\n" + e);
+        }finally {
+            if (currentRs != null) {
+                try {
+                    currentRs.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentRs = null;
+            }
+            if (currentStatement != null) {
+                try {
+                    currentStatement.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentStatement = null;
+            }
+            if (currentConnection != null) {
+                try {
+                    currentConnection.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentConnection = null;
+            }
+        }
     }
 }

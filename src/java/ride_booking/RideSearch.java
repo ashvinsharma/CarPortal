@@ -1,10 +1,8 @@
 package ride_booking;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import session_servlet.UserBean;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 public class RideSearch extends HttpServlet{
@@ -17,7 +15,7 @@ public class RideSearch extends HttpServlet{
         Date fromDate = null, toDate = null;
         try{
             fromDate = formatter.parse(fromString);
-            System.out.println("ridesearch: " + fromString);
+            System.out.println("Car Available from: " + fromString + "to: " + toString);
             toDate = formatter.parse(toString);
             if(fromDate.before(toDate)){
                 if(RideDAO.searchRide(carBean, fromString, toString)){

@@ -17,6 +17,11 @@
         </c:if>
         <c:if test="${sessionScope.user.getGroup() == 2}"> <%--only visible to owner group of users--%>
             Hi ${sessionScope.user.getFirstName()}
+            <h1>Select Dates when you can give your car:</h1>
+            <form action="DatesLockServlet">    
+                From: <input name="from" type="date"/> To: <input name="to" type="date"/><br>
+                    <input type="submit" value="Submit Dates" align="right">
+            </form>        
         </c:if>
         <c:if test="${sessionScope.user.getGroup() == 3}"> <%--only visible to memeber group of users--%>
             Hi ${sessionScope.user.getFirstName()}, Let's book your ride {number}.
