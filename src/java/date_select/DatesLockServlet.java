@@ -23,7 +23,10 @@ public class DatesLockServlet extends HttpServlet{
             toDate = formatter.parse(toString);
             if(fromDate.before(toDate)){
                 RideDAO.lockdates(user.getUsername(), user.getCar(),fromString, toString);
-            }
+                response.sendRedirect("successdateslocked.jsp");
+                user.setFromString(fromString);
+                user.setToString(toString);
+            }else{response.sendRedirect("errordateslocked.jsp");}
         }catch(Exception e){}
     }
 }
