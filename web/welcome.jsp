@@ -11,7 +11,7 @@
 </jsp:include><br><br><br>
 <c:choose>
     <c:when test="${sessionScope.user != null}">
-        <div align="right"><a href="profile.jsp" align>Your Profile</a><br></div>
+        <div align="right"><a href="profile.jsp">Your Profile</a><br></div>
         <c:if test="${sessionScope.user.getGroup() == 1}"> <%--only visible to admin group of users--%>
             Hi ${sessionScope.user.getFirstName()}
         </c:if>
