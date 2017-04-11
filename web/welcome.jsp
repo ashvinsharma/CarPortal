@@ -22,7 +22,7 @@
                 From: <input name="from" type="date"/> To: <input name="to" type="date"/><br>
                     <input type="submit" value="Submit Dates" align="right">
             </form>
-            <c:if test="${sessionScope.user.getFromString()} != null">
+            <c:if test="${not empty sessionScope.user.getFromString()}">
                 <table style="width: 100%;">
                     <caption>Your commitments</caption>
                     <tr style="background-color: #f2f2f2;">
