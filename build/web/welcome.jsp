@@ -19,10 +19,10 @@
             Hi ${sessionScope.user.getFirstName()}
             <h1>Select Dates when you can give your car:</h1>
             <form action="DatesLockServlet">    
-                From: <input name="from" type="date"/> To: <input name="to" type="date"/><br>
+                From: <input name="from" type="date" required/> To: <input name="to" type="date" required/><br>
                     <input type="submit" value="Submit Dates" align="right">
             </form>
-            <c:if test="${not empty sessionScope.user.getFromString()}">
+            <c:if test="${sessionScope.user.getFromString() != null}">
                 <table style="width: 100%;">
                     <caption>Your commitments</caption>
                     <tr style="background-color: #f2f2f2;">
@@ -38,6 +38,7 @@
                         <td>${sessionScope.user.getToString()}</td>
                     </tr>
                 </table>
+                <form action="DeleteTimingsServlet"><input type="submit" value="Delete timings"></form>
             </c:if>
         </c:if>
         <c:if test="${sessionScope.user.getGroup() == 3}"> <%--only visible to memeber group of users--%>

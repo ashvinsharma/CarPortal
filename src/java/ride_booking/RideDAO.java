@@ -10,6 +10,7 @@ public class RideDAO{
     static Statement currentStatement = null;
     static ResultSet currentRs = null;
     public static boolean searchRide(CarBean carBean, String fromString, String toString){
+        boolean flag = false;
         try {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date fromDate = formatter.parse(fromString),
@@ -32,10 +33,13 @@ public class RideDAO{
                 carBean.setToString(currentRs.getString("to"));
                 System.out.println(carBean.getOwner() + " " + carBean.getCarName() + " " + carBean.getFromString() +
                         " " + carBean.getToString());
-                return true;
+                flag = true;
             }
             else{System.out.println("end!");}
-        }catch(Exception e){System.out.println(e);}
+        }catch(Exception e){
+            System.out.println(e);
+            flag = false;
+        }
         finally {
             if (currentRs != null) {
                 try {
@@ -56,9 +60,8 @@ public class RideDAO{
                 currentConnection = null;
             }
         }
-        return false;
+        return flag;
     }
-    
     public static void lockdates(String username, String carName, String fromString, String toString){
         try{
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -98,6 +101,43 @@ public class RideDAO{
                 } catch (SQLException e) {System.out.println(e);}
                 currentConnection = null;
             }
+        }
+    }
+    public static boolean deletedates(UserBean user){
+        boolean flag = false;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            String deleteQuery = "DELETE FROM `java-test`.`cars_avail` WHERE `owner`='" + user.getUsername() + "';";
+            System.out.println(deleteQuery);
+            currentConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java-test", "root", "localhost");
+            currentStatement = currentConnection.createStatement();
+            currentStatement.executeUpdate(deleteQuery);
+            System.out.println("Dates Deleted Successfully");
+            flag = true;
+            
+        }catch(Exception e){
+            System.out.println("Error in deleting the dates.\n" + e);
+            flag = false;
+        }finally{
+            if (currentRs != null) {
+                try {
+                    currentRs.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentRs = null;
+            }
+            if (currentStatement != null) {
+                try {
+                    currentStatement.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentStatement = null;
+            }
+            if (currentConnection != null) {
+                try {
+                    currentConnection.close();
+                } catch (SQLException e) {System.out.println(e);}
+                currentConnection = null;
+            }
+            return flag;
         }
     }
 }

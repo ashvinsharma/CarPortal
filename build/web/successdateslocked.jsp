@@ -8,10 +8,10 @@
 <jsp:include page="header.jsp">
     <jsp:param name="title" value="Welcome"/>
 </jsp:include><br><br><br>
-Hi ${sessionScope.user.getFirstName()}, <span style="color:blue;">Dates Locked successfully!</span>
+Hi ${sessionScope.user.getFirstName()}, <span style="color:blue;">Dates Changed successfully!</span>
     <h1>Select Dates when you can give your car:</h1>
     <form action="DatesLockServlet">    
-        From: <input name="from" type="date"/> To: <input name="to" type="date"/><br>
+        From: <input name="from" type="date" required/> To: <input name="to" type="date" required/><br>
             <input type="submit" value="Submit Dates" align="right">
     </form>
     <c:choose>
@@ -32,6 +32,7 @@ Hi ${sessionScope.user.getFirstName()}, <span style="color:blue;">Dates Locked s
                         <td>${sessionScope.user.getToString()}</td>
                     </tr>
                 </table>
+                <form action="DeleteTimingsServlet"><input type="submit" value="Delete timings"></form>
             </c:if>
         </c:when>
     </c:choose>

@@ -18,7 +18,7 @@ public class UserDAO {
             stmt = currentCon.createStatement();
             rs = stmt.executeQuery(searchQuery);
 
-           if (rs.next()) {
+            if (rs.next()) {
             //Transfering all the details of the user from mysql db to userBean
                 bean.setFirstName(rs.getString("firstname"));
                 bean.setSurName(rs.getString("surname"));
@@ -31,10 +31,20 @@ public class UserDAO {
                 bean.setValid(true); //if user exists set the isValid variable to true 
             }
             // if user does not exist set the isValid variable to false
-           else if (!rs.next()) {
+            else if (!rs.next()) {
                 System.out.println("Sorry, you are not a registered user! Please sign up first");
                 bean.setValid(false);
-            } 
+            }
+            // to fetch the previous set dates by owner
+            if(bean.getGroup() == 2){ //user is owner
+                String selectQuery = "SELECT * FROM `java-test`.`cars_avail` WHERE `owner` = '" + bean.getUsername() + "';";
+                rs = stmt.executeQuery(selectQuery);
+                if(rs.next()){
+                    bean.setFromString(rs.getString("from"));
+                    bean.setToString(rs.getString("to"));
+                    System.out.println("Owner commitmenst fetched!");
+                }
+            }
         } catch (SQLException ex) {
             System.out.println("Log In failed: An Exception has occurred! " + ex);
         } //closing all objects
