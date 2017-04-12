@@ -12,11 +12,21 @@ public class UserBean implements Serializable {
     private String type;
     private String car;
     private String email;
-    public boolean valid;
+    private String fromString, toString;
 
-    public UserBean() {
+    public String getFromString() {
+        return fromString;
     }
-
+    public void setFromString(String fromString) {
+        this.fromString = fromString;
+    }
+    public String getToString() {
+        return toString;
+    }
+    public void setToString(String toString) {
+        this.toString = toString;
+    }
+    public boolean valid;
     public String getEmail() {
         return email;
     }

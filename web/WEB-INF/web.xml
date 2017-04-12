@@ -20,6 +20,18 @@
         <servlet-name>RideSearch</servlet-name>
         <servlet-class>ride_booking.RideSearch</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DatesLockServlet</servlet-name>
+        <servlet-class>date_select.DatesLockServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>test</servlet-name>
+        <servlet-class>date_select.test</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteTimingsServlet</servlet-name>
+        <servlet-class>date_select.DeleteTimingsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
         <url-pattern>/SignUpServlet</url-pattern>
@@ -39,6 +51,18 @@
     <servlet-mapping>
         <servlet-name>RideSearch</servlet-name>
         <url-pattern>/RideSearch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DatesLockServlet</servlet-name>
+        <url-pattern>/DatesLockServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteTimingsServlet</servlet-name>
+        <url-pattern>/DeleteTimingsServlet</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>
