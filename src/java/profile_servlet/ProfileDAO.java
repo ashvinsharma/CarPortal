@@ -52,4 +52,29 @@ public class ProfileDAO{
         }
         return flag;
     }
+    public static boolean deleteUser(String username){
+        boolean flag = false;
+        String deleteQuery = "DELETE FROM `java-test`.`users` WHERE `uid`='" + username +"';";
+        System.out.println("Delete Query Entered: " + deleteQuery);
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            currentConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java-test", "root", "localhost");
+            currentStatement = currentConnection.createStatement();
+            currentStatement.executeUpdate(deleteQuery);
+            flag = true;
+        }catch(Exception e){
+            System.out.println(e);
+            flag = false;
+        }finally{
+            if(currentConnection != null){
+                try{currentConnection = null;}
+                catch(Exception e){System.out.println("Current Connection: " + e);}
+            }else if(currentStatement != null){
+                try{currentStatement = null;}
+                catch(Exception e){System.out.println("Current Statement: " + e);}
+            }
+        }
+        return flag;
+    }
 }

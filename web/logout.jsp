@@ -11,5 +11,4 @@
     </c:when>
     <c:otherwise>You are already logged out</c:otherwise>
 </c:choose>    
-}%>
 <jsp:include page="footer.jsp"/>

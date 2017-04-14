@@ -14,10 +14,14 @@
         <div align="right"><a href="profile.jsp">Your Profile</a><br></div>
         <c:if test="${sessionScope.user.getGroup() == 1}"> <%--only visible to admin group of users--%>
             Hi ${sessionScope.user.getFirstName()}
+            <form action="DeleteUser" method="post">
+                <h2>Type the name of the user you want to delete Account of:</h2><input type="text" name="uid" required placeholder="Username">
+                <input type="submit" value="Delete User Account">
+            </form>
         </c:if>
         <c:if test="${sessionScope.user.getGroup() == 2}"> <%--only visible to owner group of users--%>
             Hi ${sessionScope.user.getFirstName()}
-            <h1>Select Dates when you can give your car:</h1>
+            <h1>Select Dates when you can give your ${sessionScope.user.getCar()}:</h1>
             <form action="DatesLockServlet">    
                 From: <input name="from" type="date" required/> To: <input name="to" type="date" required/><br>
                     <input type="submit" value="Submit Dates" align="right">
