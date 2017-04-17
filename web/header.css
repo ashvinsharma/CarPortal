@@ -16,6 +16,7 @@
                 color: #fff !important;
              }
 
+             
              .navbar-nav li.active a {
                 color: #fff !important;
                 background-color:#29292c !important;
@@ -24,6 +25,6 @@
 
              .navbar-right{
                 
-              left: calc(95% - 10px)
+              right: calc(6% - 10px)
              }
             
