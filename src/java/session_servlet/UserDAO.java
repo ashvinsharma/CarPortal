@@ -26,6 +26,7 @@ public class UserDAO {
                 bean.setCar(rs.getString("car"));
                 bean.setType(rs.getString("type"));
                 bean.setEmail(rs.getString("email"));
+                bean.setCount(rs.getInt("count"));
             //Transfering all the details of the user from mysql db to userBean
                 System.out.println(rs.getString("firstname") + " logged in.");
                 bean.setValid(true); //if user exists set the isValid variable to true 
@@ -80,7 +81,7 @@ public class UserDAO {
                 + "VALUES "
                 + "('" + bean.getUsername() + "', '" + bean.getPassword() + "', '" + bean.getFirstName() + "', '"
                 + bean.getSurName() + "', '" + bean.getGroup() + "', '" + bean.getType() + "', '" + bean.getCar() + "', '" 
-                + bean.getEmail() +"');";
+                + bean.getEmail() +"','" + bean.getCount() +"');";
             System.out.println("Query Entered: " + insertQuery);
             stmt.executeUpdate(insertQuery);
             bean.setValid(true);

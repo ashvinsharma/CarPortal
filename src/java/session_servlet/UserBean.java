@@ -8,12 +8,19 @@ public class UserBean implements Serializable {
     private String pass;
     private String firstName;
     private String surName;
-    private int group;
+    private int group, count;
     private String type;
     private String car;
     private String email;
     private String fromString, toString;
+    public boolean valid;
 
+    public int getCount() {
+        return count;
+    }
+    public void setCount(int count) {
+        this.count = count;
+    }
     public String getFromString() {
         return fromString;
     }
@@ -26,7 +33,6 @@ public class UserBean implements Serializable {
     public void setToString(String toString) {
         this.toString = toString;
     }
-    public boolean valid;
     public String getEmail() {
         return email;
     }

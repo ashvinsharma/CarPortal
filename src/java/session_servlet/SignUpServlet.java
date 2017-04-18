@@ -16,6 +16,7 @@ public class SignUpServlet extends HttpServlet{
             user.setGroup(Integer.parseInt(request.getParameter("group"))); //passing group id as int
             user.setEmail(request.getParameter("email"));
             user.setCar(request.getParameter("car"));
+            user.setCount(0);
             
             System.out.println("User: '" + user.getUsername() + "' signing up.");
             user = UserDAO.register(user);
