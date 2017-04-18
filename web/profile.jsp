@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="header.jsp">
     <jsp:param name="title" value="Profile"/>
 </jsp:include><br><br><br>
@@ -26,7 +27,9 @@
         <div class="col-sm-4">
             <a href="changepwd.jsp">Change Password</a>&emsp;
         </div>
-        
+         <c:if test="${sessionScope.user.getGroup() == 2}">
+       <a href="modifycar.jsp">Change Car</a>
+         </c:if>
     </div>
 
     <div class="row">

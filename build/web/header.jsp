@@ -11,10 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="login.css"/>
-        <link rel="stylesheet" type="text/css" href="signup.css"/>
         <link rel="stylesheet" type="text/css" href="header.css"/>
         <link rel="stylesheet" type="text/css" href="index.css"/>
-        <link rel="stylesheet" type="text/css" href="change.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -25,8 +23,7 @@
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="index.jsp">Home</a>
-                        
+                        <a class="navbar-brand" href="welcome.jsp">Home</a>
                         <ul class="nav navbar-nav navbar-right">
                             <c:choose>
                                 <c:when test="${sessionScope.user == null}">
@@ -34,14 +31,12 @@
                                     <li><a href="signup.jsp">Sign Up</a></li>
                                 </c:when>
                                 <c:otherwise>
-                                <li><a href="profile.jsp" >Hi, ${sessionScope.user.getFirstName()} </a></li>
+                                    Hi, ${sessionScope.user.getFirstName()}
                                     <li><a href="logout.jsp">Logout</a></li>
                                 </c:otherwise>
                                 </c:choose>
                         </ul>
-                        
                     </div>
                 </div>   
-            </nav>
         </div>
         <!-- end of header-->

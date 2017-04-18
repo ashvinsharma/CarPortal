@@ -77,13 +77,11 @@ public class ProfileDAO{
         }
         return flag;
     }
-    
-    
-    
-    public static boolean updateEmail(UserBean user, String newemail){
+    public static boolean updateCar(UserBean user, String car){
         boolean flag=false;
-        String updateQuery = "UPDATE `java-test`.`users` SET `email`='"
-                + newemail +"' WHERE `uid`='" + user.getUsername() +"';";
+        String updateQuery = "UPDATE `java-test`.`users` SET `car`='"
+                + car + "' WHERE `uid`='" + user.getUsername() +"';";
+        
         System.out.println("Query Entered: " + updateQuery);
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -91,6 +89,8 @@ public class ProfileDAO{
             currentStatement = currentConnection.createStatement();
             currentStatement.executeUpdate(updateQuery);
             flag=true;
+            
+            user.setCar(car);
         }catch(Exception e){System.out.println(e);}
         finally{
             if(currentConnection != null){
@@ -100,7 +100,7 @@ public class ProfileDAO{
                 try{currentStatement = null;}
                 catch(Exception e){System.out.println("Current Statement: " + e);}
             }
+            return flag;
         }
-        return flag;
     }
 }
