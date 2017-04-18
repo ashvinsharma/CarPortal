@@ -25,6 +25,7 @@
 
              .navbar-right{
                 
-              right: calc(6% - 10px)
+             position:absolute;
+             right:2%;
              }
             

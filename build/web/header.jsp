@@ -25,6 +25,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.jsp">Home</a>
+                        <div align="right">
                         <ul class="nav navbar-nav navbar-right">
                             <c:choose>
                                 <c:when test="${sessionScope.user == null}">
@@ -37,6 +38,7 @@
                                 </c:otherwise>
                                 </c:choose>
                         </ul>
+                        </div>
                     </div>
                 </div>   
             </nav>
