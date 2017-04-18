@@ -1,0 +1,130 @@
+.bgc{
+	position: absolute;
+        
+	top: 0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        
+        width: auto;
+	height: auto;
+	background-image: url(http://www.macq.eu/wp-content/uploads/2015/06/hong-kong-china-city-traffic.jpg);
+	background-size:cover;
+        
+         
+	-webkit-filter: blur(1.5px);
+	z-index: 0;
+}
+.f{
+   
+   position:absolute;
+   bottom:0px;
+   left:0px;
+   right:0px;
+   height:1px;
+   
+   
+   
+    z-index:2;
+}
+
+.gradient{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom:0px;
+	width: auto;
+	height: auto;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.95))); /* Chrome,Safari4+ */
+	z-index: 1;
+	opacity: 1;
+}
+.change{
+	position: absolute;
+	top: calc(40%);
+	left:calc(40%);
+	height: 350px;
+	width: 350px;
+	padding: 10px;
+	z-index: 2;
+        color:white;
+}
+
+.change input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+       
+        
+         
+	border: 1px solid rgba(255,255,255,0.4);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px 30px;
+        margin-top: 10px;
+}
+.change input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+         
+	border: 1px solid rgba(255,255,255,0.4);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px 30px;
+	margin-top: 10px;
+}
+.change input[type=submit]{
+	width: 250px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+        -webkit-transition-duration: 0.4s; 
+        transition-duration: 0.4s;
+  }
+
+.change input[type=submit]:hover{
+	opacity: 0.8;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.35), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
+.change input[type=submit]:active{
+	opacity: 0.6;
+}
+
+.change input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.change input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.change input[type=submit]:focus{
+	outline: none;
+}
+
+-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}

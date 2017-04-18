@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="signup.css"/>
         <link rel="stylesheet" type="text/css" href="header.css"/>
         <link rel="stylesheet" type="text/css" href="index.css"/>
+        <link rel="stylesheet" type="text/css" href="change.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -25,7 +26,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.jsp">Home</a>
-                        <div align="right">
+                        
                         <ul class="nav navbar-nav navbar-right">
                             <c:choose>
                                 <c:when test="${sessionScope.user == null}">
@@ -33,12 +34,12 @@
                                     <li><a href="signup.jsp">Sign Up</a></li>
                                 </c:when>
                                 <c:otherwise>
-                                    Hi, ${sessionScope.user.getFirstName()}
+                                <li><a href="profile.jsp" >Hi, ${sessionScope.user.getFirstName()} </a></li>
                                     <li><a href="logout.jsp">Logout</a></li>
                                 </c:otherwise>
                                 </c:choose>
                         </ul>
-                        </div>
+                        
                     </div>
                 </div>   
             </nav>

@@ -82,6 +82,11 @@
     </div>
 </div>
 <br><br>
+
+<div class="gap">
+    
+    
+</div>
 <style>
 #googleMap {
     width: 100%; /* Span the entire width of the screen */
