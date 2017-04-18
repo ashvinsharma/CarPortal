@@ -1,23 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-                <div class="body"></div>
-                <div class="grad"></div>
-                <div class="cp">
-                    <div>Car<span>Portal</span></div>
-                    
-                </div>
-                <br>
-         
-                <div class="login">
-                     <form name=login action=LoginServlet method=POST autocomplete=on>
-                     <input type=text name=uid placeholder=Username autofocus required><br>
-                     <input type=password name=pass placeholder=Password autofocus required><br>
-                              <input type=submit value=Login>
-                   
-                </form>
-                </div>
                 
-                <div class="nav">
+                
+               
+                
+         
+                
+                
+                
                     
                      <jsp:include page="header.jsp">
                         <jsp:param name="title" value="Login"/>
@@ -33,11 +23,29 @@
                             </c:choose>
                                
                                  
-                </div>             
+                  
+                
+                <div class="bg"></div>
+                <div class="grad"></div>
+                
+                
+                 <div class="cp">
+                    <div>Car<span>Portal</span></div>
                     
-                   <div class="footer">
+                </div>
+                
+                <div class="login">
+                     <form name=login action=LoginServlet method=POST autocomplete=on>
+                     <input type=text name=uid placeholder=Username autofocus required><br>
+                     <input type=password name=pass placeholder=Password autofocus required><br>
+                              <input type=submit value=Login>
+                   
+                </form>
+                </div>
+                    
+                   <div class="f">
                                 <jsp:include page="footer.jsp"/>
-                      </div>  
+                       
                 
                       
                     

@@ -81,10 +81,36 @@
         </div>
     </div>
 </div>
+<br><br>
+
+<div class="gap">
+    
+    
+</div>
+<style>
+#googleMap {
+    width: 100%; /* Span the entire width of the screen */
+    height: 400px; /* Set the height to 400 pixels */
+   
+}
+</style>
+<div id="googleMap"></div>
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(26.9363, 75.932);
+var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7szX5X8cVnVtGNJlxrCfiOoKkDJENF1M&callback=myMap"></script>
+
+
 <div>
 
     <jsp:include page="footer.jsp"/> 
-</div>
+
 
 
 

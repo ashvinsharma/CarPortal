@@ -4,20 +4,43 @@
 </jsp:include><br><br><br>
 <c:choose>
     <c:when test="${sessionScope.user == null}">
-        <form name="registration" action="SignUpServlet" method="post" autocomplete="on"> 
-        First Name:      <input type="text"     name="firstname"  placeholder="First Name" required><br> 
-        Surname Name:    <input type="text"     name="surname"    placeholder="Surname Name"><br> 
-        Email address:   <input type="text"     name="email"      placeholder="Email address" required><br> 
-        Username:        <input type="text"     name="uid"        placeholder="Username" required><br> 
-        Password:        <input type="password" name="pass"       placeholder="Password" required><br> 
-        You are:         <select name="group" required> <option>Select Type...</option>
-            <option value="3">Member</option>
-            <option value="2">Owner</option></select>
-        <br><input type="submit" value="Signup"></form>
+        
+        
+        
+        
+        
+        
+         <div class="bgs"></div>
+         <div class="grad"></div>
+          <div class="cp">
+                    <div>Car<span>Portal</span></div>
+                    
+          </div>
+         <div class="box" ></div>  
+        <div class="register">
+         <form name="registration" action="SignUpServlet" method="post" autocomplete="on"> 
+                <input type="text"     name="firstname"  placeholder="First Name" required><br> 
+                <input type="text"     name="surname"    placeholder="Surname Name"><br> 
+                <input type="text"     name="email"      placeholder="Email address" required><br> 
+                <input type="text"     name="uid"        placeholder="Username" required><br> 
+                <input type="password" name="pass"       placeholder="Password" required><br> 
+                <select name="group" required> <option>Select Type...</option>
+                <option value="3">Member</option>
+                <option value="2">Owner</option></select>
+            <br><input type="submit" value="Signup"></form>
     </c:when>
     <c:otherwise>
         <c:redirect url="index.jsp"/>
     </c:otherwise>
 </c:choose>
-Already have an account ? <a href="login.jsp">Login</a>
+            <p>Already have an account ? <a href="login.jsp">Login</p></a>
+
+        </div>
+
+
+                
+                
+                
+                
+<div class="f">
 <jsp:include page="footer.jsp"/>

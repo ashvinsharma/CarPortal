@@ -2,14 +2,55 @@
 <jsp:include page="header.jsp">
     <jsp:param name="title" value="Profile"/>
 </jsp:include><br><br><br>
-<div align="right"><a href="changepwd.jsp">Change Password</a>&emsp;
-    <c:if test="${sessionScope.user.getGroup() == 2}">
-        <a href="modifycar.jsp">Change Car</a>
-    </c:if>
-<a href="changename.jsp">Change Name</a>&emsp;
-<a href="changeemail.jsp">Change Email</a>&emsp;
-<a href="deleteaccount.jsp">Delete Account</a>&emsp;</div>
 
-<jsp:include page="footer.jsp"/>
 
+<style>
+    .container{
+       padding-left: 20%;
+       padding-right:20%;
+       z-index:4;
+       color:white;
+    } 
+    .row{
+        margin:100px;
+        color:white;
+    }
     
+    
+</style>
+
+<div class="bgs"></div>
+         <div class="grad"></div>
+
+<div class="nav">
+  <div class="container text-center">
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="changename.jsp">Change Name</a>&emsp;
+        </div>
+        <div class="col-sm-4">
+            <a href="changepwd.jsp">Change Password</a>&emsp;
+        </div>
+         <c:if test="${sessionScope.user.getGroup() == 2}">
+       <a href="modifycar.jsp">Change Car</a>
+         </c:if>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+           <a href="changeemail.jsp">Change Email</a>&emsp; 
+        </div>
+        <div class="col-sm-4">
+            <a href="deleteaccount.jsp">Delete Account</a>&emsp;
+        
+        </div>
+    </div>
+         
+   </div> 
+</div>
+    
+    <div class="f">
+    <jsp:include page="footer.jsp"/>
+        
+        
+        

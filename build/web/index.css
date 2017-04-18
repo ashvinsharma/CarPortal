@@ -30,3 +30,12 @@
                             display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
                         }
                     }
+                    
+                    .gap{
+                        
+                        
+                         background-color: #2d2d30;
+                                    color: #f5f5f5;
+    
+                                    padding:30px 30px;
+                    }

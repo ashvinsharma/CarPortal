@@ -12,13 +12,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/CarPortal/src/java/profile_servlet/ProfileDAO.java</file>
-            <file>file:/D:/Documents/CarPortal/src/java/session_servlet/UserBean.java</file>
-            <file>file:/D:/Documents/CarPortal/src/java/profile_servlet/UpdateCar.java</file>
-            <file>file:/D:/Documents/CarPortal/src/java/session_servlet/UserDAO.java</file>
-            <file>file:/D:/Documents/CarPortal/src/java/session_servlet/SignUpServlet.java</file>
-            <file>file:/D:/Documents/CarPortal/web/signup.jsp</file>
-            <file>file:/D:/Documents/CarPortal/web/header.jsp</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/index.jsp</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/login.jsp</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/header.css</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/signup.jsp</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/welcome.jsp</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/header.jsp</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/footer.jsp</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/signup.css</file>
+            <file>file:/C:/Users/User/Desktop/CINEMA%204D%20R17%20(By%20Fayre)/CarPortal/web/login.css</file>
         </group>
     </open-files>
 </project-private>

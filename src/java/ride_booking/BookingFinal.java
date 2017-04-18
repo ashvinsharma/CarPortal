@@ -22,7 +22,7 @@ public class BookingFinal extends HttpServlet{
         try {
             BookingFinal.deleteEntry(carOwner);
             BookingFinal.increaseCount(carOwner, user.getUsername());
-            response.sendRedirect("bookingdone.jsp");
+            response.sendRedirect("bookcarsuccess.jsp");
         } catch (Exception ex) {
             System.out.println("Error executing SQL queries: " + ex);
         }
