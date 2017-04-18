@@ -8,21 +8,25 @@
     .container{
        padding-left: 20%;
        padding-right:20%;
-       z-index:3;
+       z-index:4;
+       color:white;
     } 
     .row{
         margin:100px;
-        
+        color:white;
     }
     
     
 </style>
 
+<div class="bgs"></div>
+         <div class="grad"></div>
 
-<div class="container text-center">
+<div class="nav">
+  <div class="container text-center">
     <div class="row">
         <div class="col-sm-4">
-            <a href="changepwd.jsp">Change Password</a>&emsp;
+            <a href="changename.jsp">Change Name</a>&emsp;
         </div>
         <div class="col-sm-4">
             <a href="changepwd.jsp">Change Password</a>&emsp;
@@ -42,7 +46,8 @@
         </div>
     </div>
          
-<div>   
+   </div> 
+</div>
     
     <div class="f">
     <jsp:include page="footer.jsp"/>

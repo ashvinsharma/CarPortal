@@ -3,6 +3,11 @@
 
 
 
+
+.prof{
+        position:absolute;
+        z-index: 4;
+    }
 .nav{
     
    position:absolute;

@@ -103,4 +103,29 @@ public class ProfileDAO{
             return flag;
         }
     }
+    
+    
+     public static boolean updateEmail(UserBean user, String newemail){
+        boolean flag=false;
+        String updateQuery = "UPDATE `java-test`.`users` SET `email`='"
+                + newemail +"' WHERE `uid`='" + user.getUsername() +"';";
+        System.out.println("Query Entered: " + updateQuery);
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            currentConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java-test", "root", "localhost");
+            currentStatement = currentConnection.createStatement();
+            currentStatement.executeUpdate(updateQuery);
+            flag=true;
+        }catch(Exception e){System.out.println(e);}
+        finally{
+            if(currentConnection != null){
+                try{currentConnection = null;}
+                catch(Exception e){System.out.println("Current Connection: " + e);}
+            }else if(currentStatement != null){
+                try{currentStatement = null;}
+                catch(Exception e){System.out.println("Current Statement: " + e);}
+            }
+        }
+        return flag;
+    }
 }
