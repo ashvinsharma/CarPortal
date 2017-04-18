@@ -3,10 +3,15 @@ package ride_booking;
 import java.io.Serializable;
 
 public class CarBean implements Serializable{
-    private String owner;
-    private String carName;
-    private String fromString;
-    private String toString;
+    private String owner, carName, fromString, toString, ownerName;
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
     
     public String getOwner() {
         return owner;

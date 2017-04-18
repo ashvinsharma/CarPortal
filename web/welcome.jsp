@@ -12,6 +12,7 @@
 <c:choose>
     <c:when test="${sessionScope.user != null}">
         <div align="right"><a href="profile.jsp">Your Profile</a><br></div>
+            
         <c:if test="${sessionScope.user.getGroup() == 1}"> <%--only visible to admin group of users--%>
             Hi ${sessionScope.user.getFirstName()}
             <form action="DeleteUser" method="post">
@@ -19,40 +20,46 @@
                 <input type="submit" value="Delete User Account">
             </form>
         </c:if>
+        
+            
         <c:if test="${sessionScope.user.getGroup() == 2}"> <%--only visible to owner group of users--%>
             Hi ${sessionScope.user.getFirstName()}
-            <h1>Select Dates when you can give your ${sessionScope.user.getCar()}:</h1>
-            <form action="DatesLockServlet">    
-                From: <input name="from" type="date" required/> To: <input name="to" type="date" required/><br>
+            <c:if test="${sessionScope.user.getCar() == null}">
+                <h1>Please <a href="modifycar.jsp">Add your Car</a> to continue:</h1>
+            </c:if>
+            <c:if test="${not empty sessionScope.user.getCar()}">
+                <h1>Select Dates when you can give your ${sessionScope.user.getCar()}:</h1>
+                <form action="DatesLockServlet">    
+                    From: <input name="from" type="date" required/> To: <input name="to" type="date" required/><br>
                     <input type="submit" value="Submit Dates" align="right">
-            </form>
-            <c:if test="${sessionScope.user.getFromString() != null}">
-                <table style="width: 100%;">
-                    <caption>Your commitments</caption>
-                    <tr style="background-color: #f2f2f2;">
-                        <th>Owner</th>
-                        <th>Car Name</th>
-                        <th>From Date</th>
-                        <th>To Date</th>
-                    </tr>
-                    <tr>
-                        <td>${sessionScope.user.getFirstName()}</td>
-                        <td>${sessionScope.user.getCar()}</td>
-                        <td>${sessionScope.user.getFromString()}</td>
-                        <td>${sessionScope.user.getToString()}</td>
-                    </tr>
-                </table>
-                <form action="DeleteTimingsServlet"><input type="submit" value="Delete timings"></form>
+                </form>
+                <c:if test="${sessionScope.user.getFromString() != null}"> <%--If Date is already given show table--%>
+                    <table style="width: 100%;">
+                        <caption>Your commitments</caption>
+                        <tr style="background-color: #f2f2f2;">
+                            <th>Owner</th>
+                            <th>Car Name</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                        </tr>
+                        <tr>
+                            <td>${sessionScope.user.getFirstName()}</td>
+                            <td>${sessionScope.user.getCar()}</td>
+                            <td>${sessionScope.user.getFromString()}</td>
+                            <td>${sessionScope.user.getToString()}</td>
+                        </tr>
+                    </table>
+                    <form action="DeleteTimingsServlet"><input type="submit" value="Delete timings"></form>
+                </c:if>
             </c:if>
         </c:if>
+
+
         <c:if test="${sessionScope.user.getGroup() == 3}"> <%--only visible to memeber group of users--%>
-            Hi ${sessionScope.user.getFirstName()}, Let's book your ride {number}.
-            <h1>Select Date:</h1>
-            <form action="RideSearch">
-                From: <input name="from" type="date"/> To: <input name="to" type="date"/><br>
-                <input type="submit" value="Choose Cars" align="right">
-            </form>
+            Hi ${sessionScope.user.getFirstName()}, Let's book your ride #${sessionScope.user.getCount()}.
+            <jsp:include page="CarTable" />
         </c:if>
+            
     </c:when>
 </c:choose>
 

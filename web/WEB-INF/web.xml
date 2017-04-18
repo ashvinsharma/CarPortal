@@ -26,7 +26,7 @@
     </servlet>
     <servlet>
         <servlet-name>test</servlet-name>
-        <servlet-class>admin.test</servlet-class>
+        <servlet-class>profile_servlet.test</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteTimingsServlet</servlet-name>
@@ -39,6 +39,18 @@
     <servlet>
         <servlet-name>DeleteUser</servlet-name>
         <servlet-class>admin.DeleteUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CarTable</servlet-name>
+        <servlet-class>ride_booking.CarTable</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BookingFinal</servlet-name>
+        <servlet-class>ride_booking.BookingFinal</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateCar</servlet-name>
+        <servlet-class>profile_servlet.UpdateCar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
@@ -79,6 +91,18 @@
     <servlet-mapping>
         <servlet-name>DeleteUser</servlet-name>
         <url-pattern>/DeleteUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarTable</servlet-name>
+        <url-pattern>/CarTable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookingFinal</servlet-name>
+        <url-pattern>/BookingFinal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCar</servlet-name>
+        <url-pattern>/UpdateCar</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>
