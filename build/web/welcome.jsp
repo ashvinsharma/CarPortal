@@ -50,7 +50,7 @@
                 <center>
                   
                     <form action="DatesLockServlet">    
-                    <input name="from" type="date" required/> To: <input name="to" type="date" required/><br>
+                        From:<br> <input name="from" type="date" required/><br>To:</br> <input name="to" type="date" required/><br>
                     <input type="submit" value="Submit Dates" align="right">
                     </form>
                        

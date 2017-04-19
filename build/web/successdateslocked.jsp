@@ -11,7 +11,7 @@
 <center>Hi ${sessionScope.user.getFirstName()}, <span style="color:blue;">Dates Changed successfully!</span>
     <h1>Select Dates when you can give your car:</h1>
     <form action="DatesLockServlet">    
-        From: <input name="from" type="date" required<br> To: <input name="to" type="date" required/><br>
+        <input name="from" type="date" required/><br><input name="to" type="date" required/><br>
              <input type="submit" value="Submit Dates" >
     </form></center>
 
