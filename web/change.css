@@ -1,6 +1,7 @@
 .prof{
         position:absolute;
         z-index:4;
+       
     }
 
 
@@ -50,7 +51,7 @@
 }
 .change{
 	position: absolute;
-	top: calc(40%);
+	top: calc(30%);
 	left:calc(40%);
 	height: 350px;
 	width: 350px;

@@ -30,29 +30,40 @@
         <c:if test="${sessionScope.user.getGroup() == 2}"> <%--only visible to owner group of users--%>
             <center>Hi ${sessionScope.user.getFirstName()}</center>
             <c:if test="${sessionScope.user.getCar() == null}">
-                
+                 <div class="bgs"></div>
+                 <div class="grad"></div>
+                 <div class="change">
                 <center><h1>Please <a href="modifycar.jsp">Add your Car</a> to continue:</h1></center>
+                 </div>
             </c:if>
             <c:if test="${not empty sessionScope.user.getCar()}">
             
-            
-            <div class="bgs"></div>
-         <div class="grad"></div>
+                <div class="bg"></div>
+                <div class="grad"></div>
+                
+           
          
-             <div class="change">
+             
                  
-                 
+               <div class="change">   
                 <center><h1>Select Dates when you can give your ${sessionScope.user.getCar()}:</h1></center>
                 <center>
-                   
+                  
                     <form action="DatesLockServlet">    
                     <input name="from" type="date" required/> To: <input name="to" type="date" required/><br>
                     <input type="submit" value="Submit Dates" align="right">
-                    </form></center>
+                    </form>
+                       
+                   
                 </center>
+              
+                   
+                
                 <c:if test="${sessionScope.user.getFromString() != null}"> <%--If Date is already given show table--%>
-                   <div class="t"> <table style="width: 100%;">
-                        <caption>Your commitments</caption>
+                  
+                   
+                    <div class="t"> <table style="width: 100%;">
+                            <caption><center>Your commitments</center></caption>
                         <tr style="background-color: #f2f2f2;">
                             <th>Owner</th>
                             <th>Car Name</th>
@@ -66,18 +77,27 @@
                             <td>${sessionScope.user.getToString()}</td>
                         </tr>
                     </table>
-                    <form action="DeleteTimingsServlet"><input type="submit" value="Delete timings"></form>
+                        <center><form action="DeleteTimingsServlet"><input type="submit" value="Delete timings"></form></center>
                 </c:if>
             </c:if>
         </c:if>
-
+                 </div>
+              </div>
 
         <c:if test="${sessionScope.user.getGroup() == 3}"> <%--only visible to memeber group of users--%>
-            <center>Hi ${sessionScope.user.getFirstName()}, Let's book your ride #${sessionScope.user.getCount()}.</center>
-            <jsp:include page="CarTable" />
-        </c:if>
-                   </div>
+            <div class="bg"></div>
+            <div class="grad"></div>
             
+            
+            <div class="change">
+            
+            <center>Hi ${sessionScope.user.getFirstName()}, Let's book your ride #${sessionScope.user.getCount()}.</center>
+           <div class="t">
+               <jsp:include page="CarTable" /></div>
+            </div>
+        </c:if>
+
+    
     </c:when>
 </c:choose>
 
