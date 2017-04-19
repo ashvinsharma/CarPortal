@@ -54,8 +54,8 @@
                 <img src="https://3.imimg.com/data3/BW/CK/MY-8679314/sedan-car-volkswagen-new-beetal-500x500.jpg"  class="img-circle car"  alt="lite cars" width="255" height="255">
             </a>
             <div id="lite" class="collapse">
-                <p>text--------hello</p>
-                <p>text--------hello</p>
+                <p>Perfect for 4 or less people</p>
+                <p>Decent mileage</p>
             </div>
         </div>
         <div class="col-sm-4">
@@ -64,8 +64,8 @@
                 <img src="http://hondanelspruit.co.za/wp-content/uploads/2016/08/2-500x500.jpg "  class="img-circle car" alt="pro cars" width="255" height="255">  
             </a>
             <div id="pro" class="collapse">
-                <p>text--------hello</p>
-                <p>text--------hello</p>
+                <p>For longer and comfortable rides</p>
+                <p>that too with affordable rates</p>
             </div>
         </div>
         <div class="col-sm-4">
@@ -74,8 +74,8 @@
                 <img src="https://static.wixstatic.com/media/85f891_f1d4704f99d045179822ae9102027efa~mv2_d_6000_4000_s_4_2.jpg/v1/fill/w_500,h_500,al_c,q_90/file.jpg" class="img-circle car" alt="gold cars" width="255" height="255"> 
             </a>
             <div id="gold" class="collapse">
-                <p>text--------hello</p>
-                <p>text--------hello</p>
+                <p>High end cars</p>
+                <p>Say luxury and we'll get it for you</p>
             </div>
 
         </div>
