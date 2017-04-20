@@ -62,7 +62,7 @@ public class RideDAO{
         }
         return flag;
     }
-    public static void lockdates(String username, String carName, String fromString, String toString){
+    public static void lockdates(String username, String carName, String fromString, String toString, String firstName, String email){
         try{
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date fromDate = formatter.parse(fromString),
@@ -70,7 +70,7 @@ public class RideDAO{
             System.out.println(fromString);
             Class.forName("com.mysql.jdbc.Driver");
             String insertQuery = "INSERT INTO `java-test`.`cars_avail` " 
-                    + "VALUES ('" + username + "', '" + carName + "', '" + fromString + "', '" + toString + "');";
+                    + "VALUES ('" + username + "', '" + carName + "', '" + fromString + "', '" + toString + "', '" + firstName + "', '" + email + "');";
             System.out.println("Query Entered: " + insertQuery);
             
             Class.forName("com.mysql.jdbc.Driver");

@@ -22,6 +22,7 @@ public class BookingFinal extends HttpServlet{
         try {
             BookingFinal.deleteEntry(carOwner);
             BookingFinal.increaseCount(carOwner, user.getUsername());
+            user.incCount();
             response.sendRedirect("bookcarsuccess.jsp");
         } catch (Exception ex) {
             System.out.println("Error executing SQL queries: " + ex);
@@ -50,6 +51,7 @@ public class BookingFinal extends HttpServlet{
         
         currentConnection.close();
         currentStatement.close();
+        
         System.out.println("Query executed Successfully!");
     }
 }

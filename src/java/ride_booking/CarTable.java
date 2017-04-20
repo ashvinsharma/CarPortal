@@ -44,6 +44,7 @@ public class CarTable extends HttpServlet{
                 carBean.setCarName(currentRs.getString("car_name"));
                 carBean.setFromString(currentRs.getString("from"));
                 carBean.setToString(currentRs.getString("to"));
+                carBean.setEmail(currentRs.getString("email"));
                 System.out.println(carBean.getOwner() + " " + carBean.getCarName() + " " + carBean.getFromString() +
                         " " + carBean.getToString());
                         
@@ -58,6 +59,7 @@ public class CarTable extends HttpServlet{
                         + "<td><a href='bookcar.jsp?owner="+ carBean.getOwner() 
                         + "&car=" + carBean.getCarName() 
                         + "&ownername=" + carBean.getOwnerName()
+                        + "&email=" + carBean.getEmail()
                         + "'>Book</a></td>"
                         + "</tr>");
             }

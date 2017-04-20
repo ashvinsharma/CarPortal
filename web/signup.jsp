@@ -21,7 +21,7 @@
          <form name="registration" action="SignUpServlet" method="post" autocomplete="on"> 
                 <input type="text"     name="firstname"  placeholder="First Name" required><br> 
                 <input type="text"     name="surname"    placeholder="Surname Name"><br> 
-                <input type="text"     name="email"      placeholder="Email address" required><br> 
+                <input type="email"     name="email"      placeholder="Email address" required><br> 
                 <input type="text"     name="uid"        placeholder="Username" required><br> 
                 <input type="password" name="pass"       placeholder="Password" required><br> 
                 <select name="group" required> <option>Select Type...</option>

@@ -16,7 +16,7 @@
  <div class="nav">      
          
      <center><h1>Hi ${sessionScope.user.getFirstName()} your ${param.car} is booked and will accompany you on your voyage.
-        Contact ${param.ownername} for more details.</h1></center><br>
+             <a href="mailto:${param.email}">Contact ${param.ownername}</a> for more details.</h1></center><br>
         <a href="BookingFinal?owner=${param.owner}"><center>Click to confirm.</center></a>
  </div>
 <div class="f">

@@ -15,6 +15,9 @@ public class UserBean implements Serializable {
     private String fromString, toString;
     public boolean valid;
 
+    public void incCount(){
+        count += 1;
+    }
     public int getCount() {
         return count;
     }

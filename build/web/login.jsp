@@ -1,15 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-                
-                
-               
-                
-         
-                
-                
-                
-                    
-                     <jsp:include page="header.jsp">
+               <jsp:include page="header.jsp">
                         <jsp:param name="title" value="Login"/>
                         </jsp:include>
                         <c:choose>
@@ -41,13 +32,7 @@
                     
                 </div>
                 
-                <div class="login">
-                     <form name=login action=LoginServlet method=POST autocomplete=on>
-                     <input type=text name=uid placeholder=Username autofocus required><br>
-                     <input type=password name=pass placeholder=Password autofocus required><br>
-                              <input type=submit value=Login>
-                   
-                </form>
+               
                 </div>
                     
                    <div class="f">
